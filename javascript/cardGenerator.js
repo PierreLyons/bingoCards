@@ -17,24 +17,50 @@ $(document).ready(function(){
          }
         
      for (var i = 0; i < amount; i++) {
-        var l = -1;
+        var l = 0;
         var numRandom = Math.floor(Math.random()*(letters[j][1] - (letters[j][1]-14)+1) + (letters[j][1]-14) );
-         while (l < numbers.length) {
-           while (numRandom === numbers[l + 1]) {
+         while (l < (numbers.length+1)) {
+           while (numRandom == numbers[l]) {
             numRandom = Math.floor(Math.random()*(letters[j][1] - (letters[j][1]-14)+1) + (letters[j][1]-14) );
+            l = 0;
             } 
           l++;
           }
          numbers.push(numRandom);
          numbers.sort(function (a, b) {return a-b;});
        }
-         j++;
+      j++;
     }
-    $(".numbersB").html(numbers[0] + " " + numbers[1] + " " + numbers[2] + " " + numbers[3] + " " +numbers[4]);
-    $(".numbersI").html(numbers[5] + " " + numbers[6] + " " + numbers[7] + " " + numbers[8] + " " +numbers[9]);
-    $(".numbersN").html(numbers[10] + " " + numbers[11] + " " + numbers[12] + " " + numbers[13]);
-    $(".numbersG").html(numbers[14] + " " + numbers[15] + " " + numbers[16] + " " + numbers[17] + " " +numbers[18]);
-    $(".numbersO").html(numbers[19] + " " + numbers[20] + " " + numbers[21] + " " + numbers[22] + " " +numbers[23]);
+      
+    $("#b1").html(numbers[0]);
+    $("#b2").html(numbers[1]);
+    $("#b3").html(numbers[2]);
+    $("#b4").html(numbers[3]);
+    $("#b5").html(numbers[4]);
+   
+    $("#i1").html(numbers[5]);
+    $("#i2").html(numbers[6]);
+    $("#i3").html(numbers[7]);
+    $("#i4").html(numbers[8]);
+    $("#i5").html(numbers[9]);
     
+    $("#n1").html(numbers[10]);
+    $("#n2").html(numbers[11]);
+    //$("#nFree").html(numbers[]);
+    $("#n4").html(numbers[12]);
+    $("#n5").html(numbers[13]);
+    
+    $("#g1").html(numbers[14]);
+    $("#g2").html(numbers[15]);
+    $("#g3").html(numbers[16]);
+    $("#g4").html(numbers[17]);
+    $("#g5").html(numbers[18]);
+    
+    $("#o1").html(numbers[19]);
+    $("#o2").html(numbers[20]);
+    $("#o3").html(numbers[21]);
+    $("#o4").html(numbers[22]);
+    $("#o5").html(numbers[23]);
+   
   });            
  });
